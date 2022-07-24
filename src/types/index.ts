@@ -7,7 +7,9 @@ export type GetGithubIssueRequestParam = {
   statue?: GithubIssueStatue;
 };
 
-export type GetGithubIssueListResponse = {
+export type GetGithubIssueListResponse = GetGithubIssueResponse[];
+
+export type GetGithubIssueResponse = {
   number: number;
   title: string;
   user: GithubIssueUserResponse;
@@ -16,7 +18,7 @@ export type GetGithubIssueListResponse = {
   comments: number;
   html_url: string;
   state: GithubIssueStatue;
-}[];
+};
 
 export type GithubIssueUserResponse = {
   login: string;

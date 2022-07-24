@@ -19,7 +19,7 @@ export default function GithubRepoIssueList({}) {
         <div
           className='grid grid-cols-7 gap-x-1 text-center w-max overflow-x-auto mx-auto'
           css={css`
-            grid-template-columns: 1fr 600px repeat(5, 1fr);
+            grid-template-columns: 1fr 600px repeat(3, 1fr) 200px 200px;
           `}
         >
           <ListHeader name='이슈번호' />

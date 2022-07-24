@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 
 import { GetGithubIssueResponse, GithubIssueUserResponse } from '../src/types';
 
-const DATE_FORMAT = 'yyyy-MM-dd';
+const DATE_FORMAT = 'yyyy-MM-dd hh:mm:ss';
 
 export default function GithubRepoIssueListItem({ data }: { data: GetGithubIssueResponse }) {
   const { number, title, user, created_at, updated_at, comments, html_url, state } = data as GetGithubIssueResponse;

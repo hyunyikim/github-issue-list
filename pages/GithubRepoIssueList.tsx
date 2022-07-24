@@ -5,18 +5,16 @@ import { useQuery } from '@tanstack/react-query';
 import { getCRAGithubIssueList } from '../src/api';
 import { GetGithubIssueRequestParam, GetGithubIssueResponse } from '../src/types';
 import GithubRepoIssueListItem from './GithubRepoIssueListItem';
+import LoadingSkeleton from './LoadingSkeleton';
 
 export default function GithubRepoIssueList({}) {
-  // TODO
   const [params, setParams] = useState<GetGithubIssueRequestParam>({ page: 1, sort: 'comments' });
-
   const { isLoading, isError, data } = useQuery(['githubRepoIssueList', params], () => getCRAGithubIssueList(params));
 
   return (
     <main className='max-w-[1280px] mx-auto'>
       {isLoading ? (
-        // TODO loading motion
-        <>loading</>
+        <LoadingSkeleton />
       ) : (
         <div
           className='grid grid-cols-7 gap-x-1 text-center w-max overflow-x-auto mx-auto'
